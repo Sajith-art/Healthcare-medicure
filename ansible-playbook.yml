@@ -17,4 +17,4 @@
     become_user : root
 
   - name: Deploy Docker Container
-    command: docker run -itd -p 8090:9095 sajith751/healthcare-project-sajith:latest
+    command: docker run -itd -p 8090:9095 sajith751/healthcare-project-sajith:${TAG_NAME}
