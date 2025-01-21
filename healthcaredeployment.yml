@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: healthcare-medicure
-        image: sajith751/sajith751/healthcare-project-sajith:latest
+        image: sajith751/healthcare-project-sajith:latest
         ports:
         - containerPort: 7090
 
