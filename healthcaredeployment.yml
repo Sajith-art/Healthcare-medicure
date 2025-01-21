@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcare-medicure
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthcare-medicure
+  template:
+    metadata:
+      labels:
+        app: healthcare-medicure
+    spec:
+      containers:
+      - name: healthcare-medicure
+        image: sajith751/sajith751/healthcare-project-sajith:latest
+        ports:
+        - containerPort: 7090
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthcare-medicure
+spec:
+  selector:
+    app: healthcare-medicure
+  type: NodePort
+  ports:
+    - port: 8087
+      targetPort: 7090
+      nodePort: 30085
